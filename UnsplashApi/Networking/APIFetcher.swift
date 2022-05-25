@@ -8,9 +8,9 @@
 import Foundation
 import SwiftUI
 
-class SearchObjectController: ObservableObject {
+class APIFetcher: ObservableObject {
     //shared version of the class, we only call these funcs through the shared protocol
-    static let shared = SearchObjectController()
+    static let shared = APIFetcher()
     
     private init() {}
     

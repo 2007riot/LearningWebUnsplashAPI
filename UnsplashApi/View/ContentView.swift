@@ -8,21 +8,21 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var searchObjectController = SearchObjectController.shared
+    @ObservedObject var apiFetcher = APIFetcher.shared
     var body: some View {
         NavigationView {
         ScrollView  {
-            TextField("Search for photos", text: $searchObjectController.searchText)
+            TextField("Search for photos", text: $apiFetcher.searchText)
                 .onSubmit {
-                    searchObjectController.search()
+                    apiFetcher.search()
                 }
                 .textFieldStyle(.roundedBorder)
-            if searchObjectController.results.isEmpty {
+            if apiFetcher.results.isEmpty {
                 Text ("Start from searching photos")
                     .font(.title2)
             } else {
             VStack(spacing: 30) {
-            ForEach (searchObjectController.results, id: \.id) { result in
+            ForEach (apiFetcher.results, id: \.id) { result in
                 
                 HStack {
                     Spacer ()
