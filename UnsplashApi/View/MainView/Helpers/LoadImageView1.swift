@@ -12,7 +12,7 @@ import SwiftUI
 struct LoadImageView1: View {
     
     @ObservedObject var searchResultFetcher: SearchResultFetcher
-    let imageSize: CGFloat = 100
+    let imageSize: CGFloat = 600
     
     
     var body: some View {
