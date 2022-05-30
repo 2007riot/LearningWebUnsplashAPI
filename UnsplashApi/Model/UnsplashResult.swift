@@ -64,7 +64,7 @@ import SwiftUI
 
 struct UnsplashResult: Codable {
     
-    internal init(total: Int, totalPages: Int, results: [APIResults]) {
+    internal init(total: Int, totalPages: Int, results: [APIResult]) {
         self.total = total
         self.totalPages = totalPages
         self.photoResults = results
@@ -74,9 +74,9 @@ struct UnsplashResult: Codable {
     // In order to run for each loop, need to comporm to identifable protocol
     
     
-    let total: Int
-    let totalPages: Int
-    let photoResults: [APIResults]
+    let total: Int?
+    let totalPages: Int?
+    let photoResults: [APIResult]
     
     
     
@@ -93,23 +93,25 @@ struct UnsplashResult: Codable {
         
         total = try values.decode(Int.self, forKey: .total)
         totalPages = try values.decode(Int.self, forKey: .totalPages)
-        photoResults = try values.decode([APIResults].self, forKey: .photoResults)
+        photoResults = try values.decode([APIResult].self, forKey: .photoResults)
     }
     
     
     
 }
 
-struct APIResults: Codable, Identifiable, Hashable {
+struct APIResult: Codable, Identifiable, Hashable {
     
-    let id: String
+    let id: String?
     let description: String?
     let urls: URLs?
     let user: User
     
+    
+    
     //MARK: default result for preview and testing purposes
-    static func example1() -> APIResults {
-        return APIResults(
+    static func example1() -> APIResult {
+        return APIResult(
             id: "eOLpJytrbsQ",
             description: "A man drinking a coffee.",
             urls: URLs.urlsExample(),
@@ -161,9 +163,8 @@ struct User: Codable, Identifiable, Hashable {
             portfoliURL: "http://ugmonk.com/")
     }
 }
-struct URLs: Codable, Hashable, Identifiable {
+struct URLs: Codable, Hashable {
     
-    var id = UUID()
     let small: String?
     let thumb: String?
     let regular: String?

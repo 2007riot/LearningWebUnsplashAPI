@@ -5,7 +5,6 @@
 //  Created by Galina Aleksandrova on 26/05/22.
 //
 
-import Foundation
 import UIKit
 
 class ImageLoader: ObservableObject {
@@ -67,3 +66,5 @@ class ImageLoader: ObservableObject {
 
     }
 }
+
+

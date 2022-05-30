@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5C149FBD2844F7F20059EA13 /* LoadImageView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C149FBC2844F7F20059EA13 /* LoadImageView1.swift */; };
+		5C149FBF284534590059EA13 /* ImageDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C149FBE284534590059EA13 /* ImageDetailView.swift */; };
 		5C596C58283F64A90097C7B8 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C596C57283F64A80097C7B8 /* ImageLoader.swift */; };
 		5C596C5A283F7E0A0097C7B8 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C596C59283F7E0A0097C7B8 /* APIError.swift */; };
 		5C596C5C283F81FF0097C7B8 /* LoadImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C596C5B283F81FF0097C7B8 /* LoadImageView.swift */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		5C149FBC2844F7F20059EA13 /* LoadImageView1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadImageView1.swift; sourceTree = "<group>"; };
+		5C149FBE284534590059EA13 /* ImageDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailView.swift; sourceTree = "<group>"; };
 		5C596C57283F64A80097C7B8 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		5C596C59283F7E0A0097C7B8 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		5C596C5B283F81FF0097C7B8 /* LoadImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadImageView.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 			children = (
 				5C7890FF28352D9700D69B12 /* APIResultRow.swift */,
 				5C596C5D283F96DC0097C7B8 /* ResultListView.swift */,
+				5C149FBE284534590059EA13 /* ImageDetailView.swift */,
 				5C596C69283FA73A0097C7B8 /* MainView */,
 				5C596C5B283F81FF0097C7B8 /* LoadImageView.swift */,
 			);
@@ -210,6 +213,7 @@
 				5C78910028352D9700D69B12 /* APIResultRow.swift in Sources */,
 				5C596C66283FA7020097C7B8 /* ErrorMainView.swift in Sources */,
 				5C149FBD2844F7F20059EA13 /* LoadImageView1.swift in Sources */,
+				5C149FBF284534590059EA13 /* ImageDetailView.swift in Sources */,
 				5C78910F283530C600D69B12 /* SearchResultFetcher.swift in Sources */,
 				5C596C58283F64A90097C7B8 /* ImageLoader.swift in Sources */,
 				5C7891112835320000D69B12 /* UnsplashResult.swift in Sources */,

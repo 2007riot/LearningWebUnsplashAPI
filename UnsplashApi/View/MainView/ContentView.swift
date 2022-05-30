@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @StateObject var apiResultFetcher = SearchResultFetcher()
     var body: some View {
+        Group {
         if apiResultFetcher.isLoading {
             ProgressView()
         } else if apiResultFetcher.errorMessage != nil {
@@ -18,6 +19,11 @@ struct ContentView: View {
             ResultListView(photoResults: apiResultFetcher.apiResults)
         }
     }
+        .onAppear() {
+            apiResultFetcher.fetch()
+        }
+    }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {

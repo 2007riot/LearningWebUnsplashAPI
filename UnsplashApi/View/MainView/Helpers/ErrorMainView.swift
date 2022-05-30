@@ -17,7 +17,7 @@ struct ErrorMainView: View {
             Text(apiResultFetcher.errorMessage ?? "")
             
             Button("Try again") {
-                apiResultFetcher.fetchResult()
+                apiResultFetcher.fetch()
             }
         }
     }

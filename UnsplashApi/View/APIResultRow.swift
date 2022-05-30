@@ -10,13 +10,13 @@ import SwiftUI
 struct APIResultRow: View {
     
     let imageSize: CGFloat = 300
-    let apiresult: APIResults
+    let apiresult: APIResult
     
     var body: some View {
         HStack {
             if apiresult.urls?.thumb != nil {
-                LoadImageView1(searchResultFetcher: <#T##SearchResultFetcher#>)
                 LoadImageView(url: apiresult.urls!.thumb)
+                //LoadImageView(url: apiresult.urls!.thumb)
             } else {
                 Color
                     .gray
@@ -37,11 +37,11 @@ struct APIResultRow: View {
     }
 }
 
-struct APIResultRow_Previews: PreviewProvider {
-    static var previews: some View {
-        APIResultRow(apiresult: APIResults.example1())
-    }
-}
+//struct APIResultRow_Previews: PreviewProvider {
+//    static var previews: some View {
+//        APIResultRow(apiresult: APIResults.example1())
+//    }
+//}
 
 //{ phase in
 //    if let image = phase.image {

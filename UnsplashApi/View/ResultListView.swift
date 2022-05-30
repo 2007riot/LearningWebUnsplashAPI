@@ -8,26 +8,25 @@
 import SwiftUI
 
 struct ResultListView: View {
+   
+    let photoResults: [APIResult]
     
-    //@StateObject var apiResultFetcher = SearchResultFetcher()
-    let photoResults: [APIResults]
-    //let searchResult: SearchResult
     var body: some View {
         NavigationView {
             List {
                 ForEach(photoResults, id: \.self) { apiResult in
-                    APIResultRow(apiresult: apiResult)
+                    NavigationLink {
+                        ImageDetailView(apiResult: apiResult)
+                    } label: {
+                        APIResultRow(apiresult: apiResult)
+                    }
                 }
-//                ForEach(searchResult.photoResults, id: \.self) { apiResult in
-//                    APIResultRow(apiresult: apiResult)
-//                }
             }
             .listStyle(PlainListStyle())
             .navigationTitle("Unsplash")
             //.searchable(text: $apiResultFetcher.searchText)
         }
         .onAppear() {
-            //apiResultFetcher.fetchResult()
             //so we safe network data usage, but increase our phone memory with images 
             print("cache size: \(URLCache.shared.memoryCapacity / 1024) KB")
             //increase cache size to half of gigabyte
