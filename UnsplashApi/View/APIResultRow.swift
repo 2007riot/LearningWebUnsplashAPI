@@ -10,11 +10,12 @@ import SwiftUI
 struct APIResultRow: View {
     
     let imageSize: CGFloat = 300
-    let apiresult: APIResult
+    let apiresult: APIResults
     
     var body: some View {
         HStack {
             if apiresult.urls?.thumb != nil {
+                LoadImageView1(searchResultFetcher: <#T##SearchResultFetcher#>)
                 LoadImageView(url: apiresult.urls!.thumb)
             } else {
                 Color
@@ -27,7 +28,7 @@ struct APIResultRow: View {
                     Text("\(apiresult.user.name) from")
                     Text("Unsplash")
                         .onTapGesture {
-                            UIApplication.shared.open(URL(string: apiresult.user.portfolio_url ?? "https://unsplash.com/")!)
+                            UIApplication.shared.open(URL(string: apiresult.user.portfoliURL ?? "https://unsplash.com/")!)
                         }
                 }
                     .font(.headline)
@@ -38,7 +39,7 @@ struct APIResultRow: View {
 
 struct APIResultRow_Previews: PreviewProvider {
     static var previews: some View {
-        APIResultRow(apiresult: APIResult.example1())
+        APIResultRow(apiresult: APIResults.example1())
     }
 }
 

@@ -9,7 +9,7 @@ import Foundation
 
 struct APIService {
     
-    func fetchAPIResults(url: URL?, completion: @escaping(Result<[APIResult], APIError>) -> Void) {
+    func fetchAPIResults(url: URL?, completion: @escaping(Result<UnsplashResult, APIError>) -> Void) {
         
         guard let url = url else {
            let error = APIError.badURL
@@ -29,12 +29,13 @@ struct APIService {
                 completion(Result.failure(APIError.badResponse(statucCode: response.statusCode)))
                 // no error found
             } else if let data = data {
+                
                 let decoder = JSONDecoder()
                 
                 do {
-                    let cats = try decoder.decode([APIResult].self, from: data)
+                    let searchResult = try decoder.decode(UnsplashResult.self, from: data)
                     
-                    completion(Result.success(cats))
+                    completion(Result.success(searchResult))
                     
                     
                     

@@ -15,7 +15,7 @@ struct ContentView: View {
         } else if apiResultFetcher.errorMessage != nil {
             ErrorMainView(apiResultFetcher: apiResultFetcher)
         } else {
-            ResultListView(apiResults: apiResultFetcher.apiResults)
+            ResultListView(photoResults: apiResultFetcher.apiResults)
         }
     }
 }

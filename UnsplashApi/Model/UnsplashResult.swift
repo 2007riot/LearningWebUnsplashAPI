@@ -62,9 +62,9 @@ import SwiftUI
 //}
 
 
-struct SearchResult: Codable {
+struct UnsplashResult: Codable {
     
-    internal init(total: Int, totalPages: Int, results: [APIResult]) {
+    internal init(total: Int, totalPages: Int, results: [APIResults]) {
         self.total = total
         self.totalPages = totalPages
         self.photoResults = results
@@ -76,7 +76,7 @@ struct SearchResult: Codable {
     
     let total: Int
     let totalPages: Int
-    let photoResults: [APIResult]
+    let photoResults: [APIResults]
     
     
     
@@ -93,14 +93,14 @@ struct SearchResult: Codable {
         
         total = try values.decode(Int.self, forKey: .total)
         totalPages = try values.decode(Int.self, forKey: .totalPages)
-        photoResults = try values.decode([APIResult].self, forKey: .photoResults)
+        photoResults = try values.decode([APIResults].self, forKey: .photoResults)
     }
     
     
     
 }
 
-struct APIResult: Codable, Identifiable {
+struct APIResults: Codable, Identifiable, Hashable {
     
     let id: String
     let description: String?
@@ -108,8 +108,8 @@ struct APIResult: Codable, Identifiable {
     let user: User
     
     //MARK: default result for preview and testing purposes
-    static func example1() -> APIResult {
-        return APIResult(
+    static func example1() -> APIResults {
+        return APIResults(
             id: "eOLpJytrbsQ",
             description: "A man drinking a coffee.",
             urls: URLs.urlsExample(),
@@ -119,7 +119,7 @@ struct APIResult: Codable, Identifiable {
     }
 }
 
-struct User: Codable, Identifiable {
+struct User: Codable, Identifiable, Hashable {
     
     internal init(id: String, name: String, username: String, portfoliURL: String?) {
         self.id = id

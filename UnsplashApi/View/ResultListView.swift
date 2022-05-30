@@ -9,21 +9,26 @@ import SwiftUI
 
 struct ResultListView: View {
     
-    @StateObject var apiResultFetcher = SearchResultFetcher()
-    let apiResults: [SearchResult]
+    //@StateObject var apiResultFetcher = SearchResultFetcher()
+    let photoResults: [APIResults]
+    //let searchResult: SearchResult
     var body: some View {
         NavigationView {
             List {
-                ForEach(apiResults, id: \.self) { apiResult in
-                    APIResultRow(apiresult: apiResult.results)
+                ForEach(photoResults, id: \.self) { apiResult in
+                    APIResultRow(apiresult: apiResult)
                 }
+//                ForEach(searchResult.photoResults, id: \.self) { apiResult in
+//                    APIResultRow(apiresult: apiResult)
+//                }
             }
             .listStyle(PlainListStyle())
             .navigationTitle("Unsplash")
-            .searchable(text: $apiResultFetcher.searchText)
+            //.searchable(text: $apiResultFetcher.searchText)
         }
         .onAppear() {
-            //so we safe network data usage, but increase our phone memory with images of cats😹
+            //apiResultFetcher.fetchResult()
+            //so we safe network data usage, but increase our phone memory with images 
             print("cache size: \(URLCache.shared.memoryCapacity / 1024) KB")
             //increase cache size to half of gigabyte
             URLCache.shared.memoryCapacity = 1024 * 1024 * 512
@@ -33,6 +38,6 @@ struct ResultListView: View {
 
 //struct ResultListView_Previews: PreviewProvider {
 //    static var previews: some View {
-//        ResultListView(apiResults: Results())
+//        ResultListView()
 //    }
 //}
