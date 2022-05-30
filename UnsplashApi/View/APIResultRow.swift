@@ -9,13 +9,13 @@ import SwiftUI
 
 struct APIResultRow: View {
     
-    let imageSize: CGFloat = 300
+    let imageSize: CGFloat = 600
     let apiresult: APIResult
     
     var body: some View {
         HStack {
-            if apiresult.urls?.thumb != nil {
-                LoadImageView(url: apiresult.urls!.thumb)
+            if apiresult.urls?.full != nil {
+                LoadImageView(url: apiresult.urls!.full)
                 //LoadImageView(url: apiresult.urls!.thumb)
             } else {
                 Color
@@ -37,11 +37,11 @@ struct APIResultRow: View {
     }
 }
 
-//struct APIResultRow_Previews: PreviewProvider {
-//    static var previews: some View {
-//        APIResultRow(apiresult: APIResults.example1())
-//    }
-//}
+struct APIResultRow_Previews: PreviewProvider {
+    static var previews: some View {
+        APIResultRow(apiresult: APIResult.example1())
+    }
+}
 
 //{ phase in
 //    if let image = phase.image {

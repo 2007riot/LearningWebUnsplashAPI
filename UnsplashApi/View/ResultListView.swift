@@ -15,11 +15,9 @@ struct ResultListView: View {
         NavigationView {
             List {
                 ForEach(photoResults, id: \.self) { apiResult in
-                    NavigationLink {
-                        ImageDetailView(apiResult: apiResult)
-                    } label: {
+                    
                         APIResultRow(apiresult: apiResult)
-                    }
+                    
                 }
             }
             .listStyle(PlainListStyle())

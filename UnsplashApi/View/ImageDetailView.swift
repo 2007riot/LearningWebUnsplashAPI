@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ImageDetailView: View {
     
-    let imageSize: CGFloat = 300
+    let imageSize: CGFloat = 500
     let apiResult: APIResult
     var body: some View {
         
