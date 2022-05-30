@@ -13,12 +13,12 @@ struct ImageDetailView: View {
     let apiResult: APIResult
     var body: some View {
         
-            VStack (alignment: .leading, spacing: 30) {
-                HStack {
-                    Spacer()
-                    
-                    if apiResult.urls?.thumb != nil {
-                        AsyncImage(url: URL(string: apiResult.urls!.thumb!)) { phase in
+        VStack (alignment: .leading, spacing: 30) {
+            HStack {
+                Spacer()
+                
+                if apiResult.urls?.full != nil {
+                    AsyncImage(url: URL(string: apiResult.urls!.full!)) { phase in
                         if let image = phase.image {
                             image
                                 .resizable()
@@ -41,26 +41,25 @@ struct ImageDetailView: View {
                         .gray
                         .frame(height: imageSize)
                 }
-                    
-                    Spacer()
-                    
-                }
-                VStack(alignment: .leading, spacing: 15) {
-                    Text(apiResult.user.username)
-                        .font(.headline)
-                    if let portfolioURL = apiResult.user.portfoliURL {
-                        Text(portfolioURL)
-                            .font(.footnote)
-                    }
-                    
-                    Spacer()
-                    
-                }
-                .padding()
-                .navigationBarTitleDisplayMode(.inline)
+                
+                Spacer()
+                
             }
+            VStack(alignment: .leading, spacing: 15) {
+                Text(apiResult.user.username)
+                    .font(.headline)
+                    .onTapGesture {
+                        UIApplication.shared.open(URL(string: apiResult.user.portfoliURL ?? "https://unsplash.com/")!)
+                    }
+                
+                Spacer()
+                
+            }
+            .padding()
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
+}
 
 
 struct ImageDetailView_Previews: PreviewProvider {

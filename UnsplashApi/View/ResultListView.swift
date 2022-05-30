@@ -13,11 +13,15 @@ struct ResultListView: View {
     
     var body: some View {
         NavigationView {
+            
             List {
                 ForEach(photoResults, id: \.self) { apiResult in
                     
+                    NavigationLink {
+                        ImageDetailView(apiResult: apiResult)
+                    } label: {
                         APIResultRow(apiresult: apiResult)
-                    
+                    }
                 }
             }
             .listStyle(PlainListStyle())
@@ -33,8 +37,8 @@ struct ResultListView: View {
     }
 }
 
-//struct ResultListView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ResultListView()
-//    }
-//}
+struct ResultListView_Previews: PreviewProvider {
+    static var previews: some View {
+        ResultListView(photoResults: [APIResult.example1()])
+    }
+}

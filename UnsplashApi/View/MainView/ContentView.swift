@@ -10,6 +10,13 @@ import SwiftUI
 struct ContentView: View {
     @StateObject var apiResultFetcher = SearchResultFetcher()
     var body: some View {
+        VStack {
+            TextField("Search images", text: $apiResultFetcher.searchText)
+                .onSubmit {
+                    apiResultFetcher.fetch()
+                }
+                .padding()
+                .textFieldStyle(.roundedBorder)
         Group {
         if apiResultFetcher.isLoading {
             ProgressView()
@@ -21,6 +28,7 @@ struct ContentView: View {
     }
         .onAppear() {
             apiResultFetcher.fetch()
+        }
         }
     }
     
