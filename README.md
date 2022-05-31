@@ -22,7 +22,10 @@ fetch() triggers when user submit text into search bar.
         })
 ```
 
-https://user-images.githubusercontent.com/73304608/171263342-2fa5d8f3-5a84-4836-8f58-bac0eb8d9410.mp4
+
+
+https://user-images.githubusercontent.com/73304608/171263715-f36c19b2-cbeb-40a0-9bd8-5bb619fc71ec.mp4
+
 
 
 
