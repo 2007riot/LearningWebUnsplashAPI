@@ -29,17 +29,19 @@ struct ResultListView: View {
                 
             }
         } else {
-        List {
+            ScrollView {
+                
             ForEach(apiResults, id: \.self) { apiResult in
                 
-                NavigationLink {
-                    ImageDetailView(apiResult: apiResult)
-                } label: {
-                    APIResultRow(apiresult: apiResult)
-                }
+                APIResultRow(apiresult: apiResult)
+                    
+//                NavigationLink {
+//                    ImageDetailView(apiResult: apiResult)
+//                } label: {
+//                    APIResultRow(apiresult: apiResult)
+//                }
             }
         }
-        .listStyle(.plain)
         .onAppear() {
             
             //so we safe network data usage, but increase our phone memory with images

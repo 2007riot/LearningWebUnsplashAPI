@@ -23,16 +23,17 @@ struct LoadImageView: View {
             Image(uiImage: imageLoader.image!)
                 .resizable()
                 .scaledToFill()
-                .frame(width: imageSize, height: imageSize)
+                .frame(width: UIScreen.main.bounds.width * 0.90, height: imageSize)
                 .clipped()
+                .clipShape(RoundedRectangle(cornerRadius: 10))
             
         } else if imageLoader.errorMessage != nil {
             Text(imageLoader.errorMessage!)
                 .foregroundColor(.pink)
-                .frame(width: imageSize, height: imageSize)
+                .frame(width: UIScreen.main.bounds.width * 0.90, height: imageSize)
         } else {
             ProgressView()
-                .frame(width: imageSize, height: imageSize)
+                .frame(width: UIScreen.main.bounds.width * 0.90, height: imageSize)
         }
         }
         // fetching starts when view actually appears

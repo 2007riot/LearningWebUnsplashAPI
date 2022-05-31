@@ -13,14 +13,14 @@ struct APIResultRow: View {
     let apiresult: APIResult
     
     var body: some View {
-        VStack (alignment: .center, spacing: 10) {
+        VStack (alignment: .leading, spacing: 10) {
             if apiresult.urls?.full != nil {
                 LoadImageView(url: apiresult.urls!.full)
                 //LoadImageView(url: apiresult.urls!.thumb)
             } else {
                 Color
                     .gray
-                    .frame(width: imageSize, height: imageSize, alignment: .center)
+                    .frame(width: imageSize, height: imageSize, alignment: .leading)
             }
             VStack(alignment: .leading, spacing: 5) {
                
@@ -38,6 +38,7 @@ struct APIResultRow: View {
                 if let description = apiresult.description {
                     Text(description)
                         .font(.footnote)
+                        .frame(alignment: .leading)
                 }
             }
         }
