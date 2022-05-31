@@ -11,6 +11,7 @@ struct ContentView: View {
     @StateObject var apiResultFetcher = SearchResultFetcher()
     var body: some View {
         
+        NavigationView {
         Group {
         if apiResultFetcher.isLoading {
             ProgressView()
@@ -20,9 +21,15 @@ struct ContentView: View {
             ResultListView(apiResults: apiResultFetcher.apiResults)
         }
     }
-        .onAppear() {
-            apiResultFetcher.fetch()
         }
+        .searchable(text: $apiResultFetcher.searchText)
+        .onSubmit(of: .search, {
+            
+            apiResultFetcher.fetch()
+        })
+//        .onAppear() {
+//            apiResultFetcher.fetch()
+//        }
         
     }
     

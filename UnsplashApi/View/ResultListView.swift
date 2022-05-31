@@ -11,7 +11,7 @@ struct ResultListView: View {
    
     let apiResults : [APIResult]
     var body: some View {
-        NavigationView {
+       
                         List {
                             ForEach(apiResults, id: \.self) { apiResult in
                                 
@@ -24,7 +24,8 @@ struct ResultListView: View {
                         }
                         .listStyle(.plain)
                         .navigationTitle("Unsplash")
-                    }
+                    
+        
                 .onAppear() {
                     
             //so we safe network data usage, but increase our phone memory with images 

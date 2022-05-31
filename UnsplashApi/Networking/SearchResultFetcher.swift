@@ -28,7 +28,7 @@ class SearchResultFetcher: ObservableObject {
         isLoading = true
         //when loading is started need to reset error message
         errorMessage = nil
-        
+        apiResults = []
         //create URL (optional)
         let url = URL(string: "https://api.unsplash.com/search/photos?query=\(searchText)")!
         
