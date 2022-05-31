@@ -34,8 +34,6 @@ struct User: Codable, Identifiable, Hashable {
         userLinks = try values.decodeIfPresent(UserLinks.self, forKey: .userLinks)
     }
     
-    
-    
     enum CodingKeys: String, CodingKey {
         
         case id

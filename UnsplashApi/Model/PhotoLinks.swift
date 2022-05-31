@@ -17,15 +17,12 @@ struct PhotoLinks: Codable, Hashable {
         self.download = download
     }
     
-    
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         
         original = try values.decode(String.self, forKey: .original)
         download = try values.decode(String.self, forKey: .download)
     }
-    
-    
     
     enum CodingKeys: String, CodingKey {
         

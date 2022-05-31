@@ -14,18 +14,13 @@ struct UnsplashResult: Codable {
     let totalPages: Int?
     let photoResults: [APIResult]
     
+    
     internal init(total: Int, totalPages: Int, results: [APIResult]) {
         self.total = total
         self.totalPages = totalPages
         self.photoResults = results
     }
     
-    enum CodingKeys: String, CodingKey {
-        
-        case total
-        case totalPages = "total_pages"
-        case photoResults = "results"
-    }
     
     init(from decoder: Decoder) throws {
         
@@ -36,6 +31,11 @@ struct UnsplashResult: Codable {
         photoResults = try values.decode([APIResult].self, forKey: .photoResults)
     }
     
-    
+    enum CodingKeys: String, CodingKey {
+        
+        case total
+        case totalPages = "total_pages"
+        case photoResults = "results"
+    }
     
 }

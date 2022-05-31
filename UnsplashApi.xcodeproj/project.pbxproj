@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		5C149FBF284534590059EA13 /* ImageDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C149FBE284534590059EA13 /* ImageDetailView.swift */; };
-		5C413D66284646BC008DE91D /* PlaceholderButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C413D65284646BC008DE91D /* PlaceholderButtonView.swift */; };
 		5C413D6828465416008DE91D /* APIResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C413D6728465416008DE91D /* APIResult.swift */; };
 		5C413D6A28465438008DE91D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C413D6928465438008DE91D /* User.swift */; };
 		5C413D6C28465451008DE91D /* PhotoLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C413D6B28465451008DE91D /* PhotoLinks.swift */; };
 		5C413D6E2846545D008DE91D /* UserLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C413D6D2846545D008DE91D /* UserLinks.swift */; };
+		5C413D7028465712008DE91D /* URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C413D6F28465711008DE91D /* URLs.swift */; };
 		5C596C58283F64A90097C7B8 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C596C57283F64A80097C7B8 /* ImageLoader.swift */; };
 		5C596C5A283F7E0A0097C7B8 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C596C59283F7E0A0097C7B8 /* APIError.swift */; };
 		5C596C5C283F81FF0097C7B8 /* LoadImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C596C5B283F81FF0097C7B8 /* LoadImageView.swift */; };
@@ -29,11 +29,11 @@
 
 /* Begin PBXFileReference section */
 		5C149FBE284534590059EA13 /* ImageDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailView.swift; sourceTree = "<group>"; };
-		5C413D65284646BC008DE91D /* PlaceholderButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderButtonView.swift; sourceTree = "<group>"; };
 		5C413D6728465416008DE91D /* APIResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResult.swift; sourceTree = "<group>"; };
 		5C413D6928465438008DE91D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5C413D6B28465451008DE91D /* PhotoLinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLinks.swift; sourceTree = "<group>"; };
 		5C413D6D2846545D008DE91D /* UserLinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLinks.swift; sourceTree = "<group>"; };
+		5C413D6F28465711008DE91D /* URLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLs.swift; sourceTree = "<group>"; };
 		5C596C57283F64A80097C7B8 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		5C596C59283F7E0A0097C7B8 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		5C596C5B283F81FF0097C7B8 /* LoadImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadImageView.swift; sourceTree = "<group>"; };
@@ -73,7 +73,6 @@
 			isa = PBXGroup;
 			children = (
 				5C596C65283FA7020097C7B8 /* ErrorMainView.swift */,
-				5C413D65284646BC008DE91D /* PlaceholderButtonView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -135,6 +134,7 @@
 				5C413D6B28465451008DE91D /* PhotoLinks.swift */,
 				5C413D6928465438008DE91D /* User.swift */,
 				5C413D6D2846545D008DE91D /* UserLinks.swift */,
+				5C413D6F28465711008DE91D /* URLs.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -222,9 +222,9 @@
 				5C78910028352D9700D69B12 /* APIResultRow.swift in Sources */,
 				5C596C66283FA7020097C7B8 /* ErrorMainView.swift in Sources */,
 				5C149FBF284534590059EA13 /* ImageDetailView.swift in Sources */,
+				5C413D7028465712008DE91D /* URLs.swift in Sources */,
 				5C413D6828465416008DE91D /* APIResult.swift in Sources */,
 				5C78910F283530C600D69B12 /* SearchResultFetcher.swift in Sources */,
-				5C413D66284646BC008DE91D /* PlaceholderButtonView.swift in Sources */,
 				5C413D6A28465438008DE91D /* User.swift in Sources */,
 				5C596C58283F64A90097C7B8 /* ImageLoader.swift in Sources */,
 				5C413D6C28465451008DE91D /* PhotoLinks.swift in Sources */,

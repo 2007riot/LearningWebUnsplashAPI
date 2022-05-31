@@ -23,7 +23,7 @@ struct ContentView: View {
                     } else if apiResultFetcher.errorMessage != nil {
                         ErrorMainView(apiResultFetcher: apiResultFetcher)
                     } else {
-                        ResultListView(apiResults: apiResultFetcher.apiResults, searchText: $apiResultFetcher.searchText)
+                        ResultListView(apiResults: apiResultFetcher.apiResults)
                     }
                 }
                 .navigationTitle("Unsplash")

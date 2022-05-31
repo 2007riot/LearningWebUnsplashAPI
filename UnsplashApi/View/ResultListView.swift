@@ -11,19 +11,12 @@ struct ResultListView: View {
     
     let apiResults : [APIResult]
     
-    @Binding var searchText: String
     
     var body: some View {
         
         if apiResults.isEmpty {
             
             VStack (spacing: 20) {
-                
-                Button("cat", action:  {
-                    print("cat")
-                    searchText = "cat"
-                    
-                })
                 
                 Spacer()
                 
@@ -60,6 +53,6 @@ struct ResultListView: View {
 
 struct ResultListView_Previews: PreviewProvider {
     static var previews: some View {
-        ResultListView(apiResults: [APIResult.example1()], searchText: .constant("cat"))
+        ResultListView(apiResults: [APIResult.example1()])
     }
 }

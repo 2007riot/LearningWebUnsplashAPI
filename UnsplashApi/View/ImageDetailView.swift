@@ -15,6 +15,7 @@ struct ImageDetailView: View {
         
         VStack (alignment: .leading, spacing: 30) {
             HStack {
+                
                 Spacer()
                 
                 if apiResult.urls?.full != nil {

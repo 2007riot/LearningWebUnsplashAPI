@@ -16,7 +16,6 @@ struct APIResult: Codable, Identifiable, Hashable {
     let links: PhotoLinks?
     
     
-    
     //MARK: default result for preview and testing purposes
     static func example1() -> APIResult {
         return APIResult(
