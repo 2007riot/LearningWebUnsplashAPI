@@ -9,11 +9,11 @@ import SwiftUI
 
 struct APIResultRow: View {
     
-    let imageSize: CGFloat = 600
+    let imageSize: CGFloat = 300
     let apiresult: APIResult
     
     var body: some View {
-        HStack {
+        VStack (alignment: .center, spacing: 10) {
             if apiresult.urls?.full != nil {
                 LoadImageView(url: apiresult.urls!.full)
                 //LoadImageView(url: apiresult.urls!.thumb)
@@ -23,15 +23,22 @@ struct APIResultRow: View {
                     .frame(width: imageSize, height: imageSize, alignment: .center)
             }
             VStack(alignment: .leading, spacing: 5) {
-                HStack {
-                    
-                    Text("\(apiresult.user.name) from")
-                    Text("Unsplash")
-                        .onTapGesture {
-                            UIApplication.shared.open(URL(string: apiresult.user.portfoliURL ?? "https://unsplash.com/")!)
-                        }
+               
+                    Text(apiresult.user.name)
+                    .font(.title3)
+                    .bold()
+                        
+                
+                Text("from Unsplash")
+                    .underline()
+                    .foregroundColor(.blue)
+                    .onTapGesture {
+                        UIApplication.shared.open(URL(string: apiresult.user.userLinks?.htmlProfile ?? "https://unsplash.com/")!)
+                    }
+                if let description = apiresult.description {
+                    Text(description)
+                        .font(.footnote)
                 }
-                    .font(.headline)
             }
         }
     }

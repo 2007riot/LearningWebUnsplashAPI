@@ -15,7 +15,7 @@ class SearchResultFetcher: ObservableObject {
     var token = "aRSpEUSP492gx0Ui0q7qeRAH56ZTNZGlo0-Or3TivBE"
     
     @Published var apiResults: [APIResult] = []
-    @Published var searchText: String = "water"
+    @Published var searchText: String = ""
     @Published var isLoading: Bool = false
     @Published var errorMessage: String? = nil
     @Published var image: UIImage? = nil

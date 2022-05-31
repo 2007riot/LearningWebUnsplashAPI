@@ -8,28 +8,32 @@
 import SwiftUI
 
 struct ContentView: View {
+    
     @StateObject var apiResultFetcher = SearchResultFetcher()
+    
     var body: some View {
         
         NavigationView {
-        Group {
-        if apiResultFetcher.isLoading {
-            ProgressView()
-        } else if apiResultFetcher.errorMessage != nil {
-            ErrorMainView(apiResultFetcher: apiResultFetcher)
-        } else {
-            ResultListView(apiResults: apiResultFetcher.apiResults)
-        }
-    }
+            
+            VStack {
+                
+                Group {
+                    if apiResultFetcher.isLoading {
+                        ProgressView()
+                    } else if apiResultFetcher.errorMessage != nil {
+                        ErrorMainView(apiResultFetcher: apiResultFetcher)
+                    } else {
+                        ResultListView(apiResults: apiResultFetcher.apiResults, searchText: $apiResultFetcher.searchText)
+                    }
+                }
+                .navigationTitle("Unsplash")
+            }
         }
         .searchable(text: $apiResultFetcher.searchText)
         .onSubmit(of: .search, {
             
             apiResultFetcher.fetch()
         })
-//        .onAppear() {
-//            apiResultFetcher.fetch()
-//        }
         
     }
     

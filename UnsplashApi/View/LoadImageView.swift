@@ -10,7 +10,7 @@ import SwiftUI
 struct LoadImageView: View {
     
     @StateObject var imageLoader: ImageLoader
-    let imageSize: CGFloat = 100
+    let imageSize: CGFloat = 300
     
     // creating data object from custom initializer and giving it a right url
     init(url: String?) {
@@ -18,7 +18,7 @@ struct LoadImageView: View {
     }
     
     var body: some View {
-        Group {
+        VStack (alignment: .leading) {
         if imageLoader.image != nil {
             Image(uiImage: imageLoader.image!)
                 .resizable()
