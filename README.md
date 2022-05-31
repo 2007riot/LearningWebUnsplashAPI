@@ -6,4 +6,4 @@ Inspired by Karin Prater [tutorial](https://www.youtube.com/playlist?list=PLWHeg
 
 The UI was written in SwiftUI.
 
-/Users/galinaaleksandrova/Desktop/UnsplashApiDemo.mov
+
