@@ -6,7 +6,7 @@ The project was built using SwiftUI and MVVM app architecture. The main goal - i
 To fetch data from API were created two main functions:
 ```swift
 func fetch()
-func loadImage ()
+func loadImage()
 ```
 fetch() - fetch the data from the API and with JSONDecoder can show the data in the UI
 
