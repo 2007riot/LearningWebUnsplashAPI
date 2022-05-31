@@ -12,7 +12,7 @@ fetch() - fetch the data from the API and with JSONDecoder can show the data in 
 
 <img src="https://user-images.githubusercontent.com/73304608/171253846-e92bc9ea-b9cf-429b-81b2-1cfe65331000.png" width="277" height="600">
 
-fetch() triggers when user submit text onto search bar.
+fetch() triggers when user submit text into search bar.
 
 ```swift
 .searchable(text: $apiResultFetcher.searchText, placement: .navigationBarDrawer)
@@ -22,9 +22,7 @@ fetch() triggers when user submit text onto search bar.
         })
 ```
 
-
-https://user-images.githubusercontent.com/73304608/171260280-009d9145-d8cb-49a6-997e-ff5bf02b3bfe.mp4
-
+https://user-images.githubusercontent.com/73304608/171263342-2fa5d8f3-5a84-4836-8f58-bac0eb8d9410.mp4
 
 
 
