@@ -45,9 +45,10 @@ struct ResultListView: View {
         .onAppear() {
             
             //so we safe network data usage, but increase our phone memory with images
-            print("cache size: \(URLCache.shared.memoryCapacity / 1024) KB")
+            
             //increase cache size to half of gigabyte
             URLCache.shared.memoryCapacity = 1024 * 1024 * 512
+            print("cache size: \(URLCache.shared.memoryCapacity / 1024) KB")
         }
         }
     }

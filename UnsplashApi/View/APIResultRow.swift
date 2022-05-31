@@ -14,8 +14,8 @@ struct APIResultRow: View {
     
     var body: some View {
         VStack (alignment: .leading, spacing: 10) {
-            if apiresult.urls?.full != nil {
-                LoadImageView(url: apiresult.urls!.full)
+            if apiresult.urls?.regular != nil {
+                LoadImageView(url: apiresult.urls!.regular)
                 //LoadImageView(url: apiresult.urls!.thumb)
             } else {
                 Color
@@ -38,7 +38,7 @@ struct APIResultRow: View {
                 if let description = apiresult.description {
                     Text(description)
                         .font(.footnote)
-                        .frame(alignment: .leading)
+                        .frame(width: UIScreen.main.bounds.width * 0.9, alignment: .leading)
                 }
             }
         }

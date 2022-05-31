@@ -29,11 +29,13 @@ struct ContentView: View {
                 .navigationTitle("Unsplash")
             }
         }
-        .searchable(text: $apiResultFetcher.searchText)
+        .navigationViewStyle(.stack)
+        .searchable(text: $apiResultFetcher.searchText, placement: .navigationBarDrawer)
         .onSubmit(of: .search, {
             
             apiResultFetcher.fetch()
         })
+        
         
     }
     
